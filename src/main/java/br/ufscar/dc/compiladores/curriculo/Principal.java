@@ -1,0 +1,61 @@
+package br.ufscar.dc.compiladores.curriculo;
+
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
+import org.antlr.v4.runtime.CharStreams;
+import org.antlr.v4.runtime.CommonTokenStream;
+import org.antlr.v4.runtime.Token;
+
+public class Principal {
+    public static void main(String[] args) {
+        try {
+            // Verifica se foi fornecido um arquivo de entrada
+            if (args.length < 1) {
+                System.out.println("Uso: java -jar curriculo-compilador.jar <arquivo_entrada>");
+                return;
+            }
+
+            String arquivoEntrada = args[0];
+            String arquivoSaida = arquivoEntrada.replaceAll("\\.curriculo$", ".html");
+            
+            // Análise léxica
+            CurriculoLexer lexer = new CurriculoLexer(CharStreams.fromFileName(arquivoEntrada));
+            CommonTokenStream tokens = new CommonTokenStream(lexer);
+            
+            // Análise sintática
+            CurriculoParser parser = new CurriculoParser(tokens);
+            CurriculoParser.ProgramaContext arvore = parser.programa();
+            
+            // Análise semântica
+            CurriculoSemantico semantico = new CurriculoSemantico();
+            semantico.visitPrograma(arvore);
+            
+            if (semantico.getErros().isEmpty()) {
+                // Geração de código HTML
+                GeradorHTML gerador = new GeradorHTML();
+                String html = gerador.gerarHTML(arvore);
+                
+                // Escreve o arquivo HTML
+                try (PrintWriter writer = new PrintWriter(new FileWriter(arquivoSaida))) {
+                    writer.write(html);
+                }
+                
+                System.out.println("Compilação realizada com sucesso!");
+                System.out.println("Arquivo HTML gerado: " + arquivoSaida);
+            } else {
+                System.out.println("Erros semânticos encontrados:");
+                for (String erro : semantico.getErros()) {
+                    System.out.println(erro);
+                }
+            }
+            
+        } catch (IOException e) {
+            System.err.println("Erro ao ler o arquivo: " + e.getMessage());
+        } catch (Exception e) {
+            System.err.println("Erro durante a compilação: " + e.getMessage());
+            e.printStackTrace();
+        }
+    }
+} 

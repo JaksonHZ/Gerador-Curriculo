@@ -1,0 +1,32 @@
+CURRICULO TesteErros {
+    nome: "Teste de Erros";
+    email: "email-invalido";  // Email inválido
+    telefone: "(11) 99999-9999";
+    endereco: "São Paulo, SP";
+    linkedin: "https://site-errado.com/perfil";  // LinkedIn inválido
+    github: "https://gitlab.com/usuario";  // GitHub inválido
+}
+
+SECAO educacao {
+    educacao {
+        instituicao: "Universidade de São Paulo";
+        curso: "Ciência da Computação";
+        nivel: GRADUACAO;
+        inicio: "15/12/2022";  // Data de início posterior à data de fim
+        fim: "01/03/2018";
+        concluido: true;
+        nota: 8.5;
+    }
+}
+
+SECAO habilidades {
+    habilidade {
+        nome: "Java";
+        nivel: INVALIDO;  // Nível inválido
+        categoria: "Linguagens de Programação";
+    }
+}
+
+SECAO projetos {
+
+}

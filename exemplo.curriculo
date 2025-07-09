@@ -1,0 +1,60 @@
+CURRICULO JoaoSilva {
+    nome: "Jakson Huang Zheng";
+    email: "jaksonhuangz@gmail.com";
+    telefone: "(11) 99999-9999";
+    endereco: "São Paulo, SP";
+    linkedin: "https://linkedin.com/in/joaosilva";
+    github: "https://github.com/joaosilva";
+}
+
+SECAO educacao {
+    educacao {
+        instituicao: "Universidade de São Paulo";
+        curso: "Ciência da Computação";
+        nivel: GRADUACAO;
+        inicio: "01/03/2018";
+        fim: "15/12/2022";
+        concluido: true;
+        nota: 8.5;
+    }
+}
+
+SECAO habilidades {
+    habilidade {
+        nome: "Java";
+        nivel: AVANCADO;
+        categoria: "Linguagens de Programação";
+    }
+    habilidade {
+        nome: "Python";
+        nivel: INTERMEDIARIO;
+        categoria: "Linguagens de Programação";
+    }
+    habilidade {
+        nome: "React";
+        nivel: AVANCADO;
+        categoria: "Frameworks Frontend";
+    }
+}
+
+SECAO experiencia {
+    experiencia {
+        empresa: "TechCorp";
+        cargo: "Desenvolvedor Full Stack";
+        inicio: "01/03/2023";
+        atual: true;
+        descricao: "Desenvolvimento de aplicações web usando React, Node.js e PostgreSQL.";
+        tecnologias: ["React", "Node.js", "PostgreSQL", "Ruby"];
+    }
+}
+
+SECAO idiomas {
+    idioma {
+        nome: "Inglês";
+        nivel: AVANCADO;
+    }
+    idioma {
+        nome: "Espanhol";
+        nivel: INTERMEDIARIO;
+    }
+} 
