@@ -1,0 +1,96 @@
+// Teste completo de erros semânticos
+CURRICULO TesteSemantico {
+    nome: "João Silva";
+    email: "email-invalido-sem-arroba"; // Erro: email inválido
+    telefone: "(11) 99999-9999";
+    endereco: "São Paulo, SP";
+    linkedin: "https://site-errado.com/perfil"; // Erro: LinkedIn inválido
+    github: "https://gitlab.com/usuario"; // Erro: GitHub inválido
+}
+
+// Erro semântico: datas cronologicamente incorretas
+SECAO educacao {
+    educacao {
+        instituicao: "Universidade de São Paulo";
+        curso: "Ciência da Computação";
+        nivel: GRADUACAO;
+        inicio: "15/12/2022"; // Data de início posterior à data de fim
+        fim: "01/03/2018";
+        concluido: true;
+        nota: 8.5;
+    }
+    educacao {
+        instituicao: "Instituto Federal";
+        curso: "Técnico em Informática";
+        nivel: TECNICO;
+        inicio: "01/02/2015";
+        fim: "15/12/2017";
+        concluido: true;
+        nota: 9.2;
+    }
+}
+
+// Erro semântico: nível inválido
+SECAO experiencia {
+    experiencia {
+        empresa: "TechCorp";
+        cargo: "Desenvolvedor Full Stack";
+        inicio: "01/03/2023";
+        atual: true;
+        descricao: "Desenvolvimento de aplicações web usando React, Node.js e PostgreSQL.";
+        tecnologias: ["React", "Node.js", "PostgreSQL"];
+    }
+    experiencia {
+        empresa: "StartupXYZ";
+        cargo: "Desenvolvedor Frontend";
+        inicio: "01/01/2022";
+        fim: "28/02/2023"; // Campo que não existe na gramática
+        atual: false;
+        descricao: "Desenvolvimento de interfaces de usuário.";
+        tecnologias: ["Vue.js", "JavaScript", "CSS"];
+    }
+}
+
+// Erro semântico: níveis inválidos
+SECAO habilidades {
+    habilidade {
+        nome: "Java";
+        nivel: AVANCADO;
+        categoria: "Linguagens de Programação";
+    }
+    habilidade {
+        nome: "Python";
+        nivel: INTERMEDIARIO;
+        categoria: "Linguagens de Programação";
+    }
+    habilidade {
+        nome: "React";
+        nivel: INVALIDO; // Erro: nível inválido
+        categoria: "Frameworks Frontend";
+    }
+    habilidade {
+        nome: "Node.js";
+        nivel: BASICO;
+        categoria: "Frameworks Backend";
+    }
+}
+
+// Erro semântico: níveis inválidos para idiomas
+SECAO idiomas {
+    idioma {
+        nome: "Inglês";
+        nivel: AVANCADO;
+    }
+    idioma {
+        nome: "Espanhol";
+        nivel: INTERMEDIARIO;
+    }
+    idioma {
+        nome: "Francês";
+        nivel: INVALIDO; // Erro: nível inválido
+    }
+    idioma {
+        nome: "Alemão";
+        nivel: BASICO;
+    }
+} 

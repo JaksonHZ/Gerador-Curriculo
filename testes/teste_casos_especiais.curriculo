@@ -1,0 +1,98 @@
+// Teste de casos especiais e edge cases
+CURRICULO CasosEspeciais {
+    nome: "Carlos Oliveira";
+    email: "carlos.oliveira@empresa.com.br"; // Email com subdomínio
+    telefone: "(11) 99999-9999";
+    endereco: "São Paulo, SP";
+    linkedin: "https://www.linkedin.com/in/carlosoliveira"; // LinkedIn com www
+    github: "https://github.com/carlos-oliveira-dev"; // GitHub com hífen
+}
+
+// Caso especial: educação sem nota
+SECAO educacao {
+    educacao {
+        instituicao: "Universidade de São Paulo";
+        curso: "Ciência da Computação";
+        nivel: GRADUACAO;
+        inicio: "01/03/2018";
+        fim: "15/12/2022";
+        concluido: true;
+        // Sem nota - deve funcionar
+    }
+    educacao {
+        instituicao: "Coursera";
+        curso: "Machine Learning";
+        nivel: POS_GRADUACAO;
+        inicio: "01/01/2023";
+        fim: "31/12/2023";
+        concluido: false;
+        nota: 9.5;
+    }
+}
+
+// Caso especial: experiência sem tecnologias
+SECAO experiencia {
+    experiencia {
+        empresa: "Empresa Pequena";
+        cargo: "Desenvolvedor";
+        inicio: "01/01/2021";
+        atual: false;
+        descricao: "Desenvolvimento de sistemas internos.";
+        // Sem tecnologias - deve funcionar
+    }
+    experiencia {
+        empresa: "Freelancer";
+        cargo: "Consultor de TI";
+        inicio: "01/06/2023";
+        atual: true;
+        descricao: "Consultoria em projetos de tecnologia.";
+        tecnologias: []; // Lista vazia - deve funcionar
+    }
+}
+
+// Caso especial: habilidades sem categoria
+SECAO habilidades {
+    habilidade {
+        nome: "Java";
+        nivel: AVANCADO;
+        // Sem categoria - deve funcionar
+    }
+    habilidade {
+        nome: "Python";
+        nivel: INTERMEDIARIO;
+        categoria: "Linguagens de Programação";
+    }
+    habilidade {
+        nome: "React";
+        nivel: BASICO;
+        categoria: "Frameworks";
+    }
+}
+
+// Caso especial: idiomas com níveis diferentes
+SECAO idiomas {
+    idioma {
+        nome: "Português";
+        nivel: AVANCADO;
+    }
+    idioma {
+        nome: "Inglês";
+        nivel: INTERMEDIARIO;
+    }
+    idioma {
+        nome: "Espanhol";
+        nivel: BASICO;
+    }
+}
+
+// Caso especial: strings com caracteres especiais
+SECAO experiencia {
+    experiencia {
+        empresa: "Empresa com & símbolos especiais";
+        cargo: "Desenvolvedor com 'aspas' e \"aspas duplas\"";
+        inicio: "01/01/2020";
+        atual: false;
+        descricao: "Descrição com caracteres especiais: @#$%^&*()";
+        tecnologias: ["React", "Node.js", "PostgreSQL"];
+    }
+} 

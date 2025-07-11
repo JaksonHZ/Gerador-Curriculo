@@ -1,0 +1,105 @@
+// Teste válido completo - deve gerar HTML sem erros
+CURRICULO MariaSantos {
+    nome: "Maria Santos";
+    email: "maria.santos@email.com";
+    telefone: "(21) 98888-7777";
+    endereco: "Rio de Janeiro, RJ";
+    linkedin: "https://linkedin.com/in/mariasantos";
+    github: "https://github.com/mariasantos";
+}
+
+// Educação válida
+SECAO educacao {
+    educacao {
+        instituicao: "Universidade Federal do Rio de Janeiro";
+        curso: "Engenharia de Computação";
+        nivel: GRADUACAO;
+        inicio: "01/03/2019";
+        fim: "15/12/2023";
+        concluido: true;
+        nota: 9.1;
+    }
+    educacao {
+        instituicao: "Pontifícia Universidade Católica";
+        curso: "Especialização em Inteligência Artificial";
+        nivel: POS_GRADUACAO;
+        inicio: "01/03/2024";
+        fim: "15/12/2024";
+        concluido: false;
+        nota: 8.8;
+    }
+}
+
+// Experiência válida
+SECAO experiencia {
+    experiencia {
+        empresa: "Google Brasil";
+        cargo: "Software Engineer";
+        inicio: "01/06/2023";
+        atual: true;
+        descricao: "Desenvolvimento de algoritmos de machine learning e otimização de sistemas distribuídos.";
+        tecnologias: ["Python", "TensorFlow", "Kubernetes", "Go"];
+    }
+    experiencia {
+        empresa: "Microsoft";
+        cargo: "Desenvolvedor Full Stack";
+        inicio: "01/01/2022";
+        atual: false;
+        descricao: "Desenvolvimento de aplicações web usando .NET Core e React.";
+        tecnologias: ["C#", "React", "SQL Server", "Azure"];
+    }
+}
+
+// Habilidades válidas
+SECAO habilidades {
+    habilidade {
+        nome: "Python";
+        nivel: AVANCADO;
+        categoria: "Linguagens de Programação";
+    }
+    habilidade {
+        nome: "JavaScript";
+        nivel: AVANCADO;
+        categoria: "Linguagens de Programação";
+    }
+    habilidade {
+        nome: "React";
+        nivel: AVANCADO;
+        categoria: "Frameworks Frontend";
+    }
+    habilidade {
+        nome: "Node.js";
+        nivel: INTERMEDIARIO;
+        categoria: "Frameworks Backend";
+    }
+    habilidade {
+        nome: "Docker";
+        nivel: INTERMEDIARIO;
+        categoria: "DevOps";
+    }
+    habilidade {
+        nome: "Kubernetes";
+        nivel: BASICO;
+        categoria: "DevOps";
+    }
+}
+
+// Idiomas válidos
+SECAO idiomas {
+    idioma {
+        nome: "Português";
+        nivel: AVANCADO;
+    }
+    idioma {
+        nome: "Inglês";
+        nivel: AVANCADO;
+    }
+    idioma {
+        nome: "Espanhol";
+        nivel: INTERMEDIARIO;
+    }
+    idioma {
+        nome: "Francês";
+        nivel: BASICO;
+    }
+} 

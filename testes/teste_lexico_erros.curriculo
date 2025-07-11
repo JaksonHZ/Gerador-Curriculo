@@ -1,0 +1,49 @@
+// Teste de erros léxicos
+CURRICULO TesteLexico {
+    nome: "João Silva";
+    email: "joao@email.com";
+    telefone: "(11) 99999-9999";
+    endereco: "São Paulo, SP";
+    linkedin: "https://linkedin.com/in/joaosilva";
+    github: "https://github.com/joaosilva";
+}
+
+// Erro léxico: símbolo não reconhecido
+SECAO educacao {
+    educacao {
+        instituicao: "Universidade de São Paulo";
+        curso: "Ciência da Computação";
+        nivel: GRADUACAO;
+        inicio: "01/03/2018";
+        fim: "15/12/2022";
+        concluido: true;
+        nota: 8.5;
+    }
+}
+
+// Erro léxico: string não fechada
+SECAO experiencia {
+    experiencia {
+        empresa: "TechCorp";
+        cargo: "Desenvolvedor Full Stack";
+        inicio: "01/03/2023";
+        atual: true;
+        descricao: "Desenvolvimento de aplicações web usando React, Node.js e PostgreSQL.
+        tecnologias: ["React", "Node.js", "PostgreSQL"];
+    }
+}
+
+// Erro léxico: número inválido
+SECAO habilidades {
+    habilidade {
+        nome: "Java";
+        nivel: AVANCADO;
+        categoria: "Linguagens de Programação";
+    }
+    habilidade {
+        nome: "Python";
+        nivel: INTERMEDIARIO;
+        categoria: "Linguagens de Programação";
+        nota: 8.5.2.1; // Número inválido
+    }
+} 

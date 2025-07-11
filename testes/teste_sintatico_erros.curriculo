@@ -1,0 +1,64 @@
+// Teste de erros sintáticos
+CURRICULO TesteSintatico {
+    nome: "João Silva";
+    email: "joao@email.com";
+    telefone: "(11) 99999-9999";
+    endereco: "São Paulo, SP";
+    linkedin: "https://linkedin.com/in/joaosilva";
+    github: "https://github.com/joaosilva";
+}
+
+// Erro sintático: falta ponto e vírgula
+SECAO educacao {
+    educacao {
+        instituicao: "Universidade de São Paulo"
+        curso: "Ciência da Computação";
+        nivel: GRADUACAO;
+        inicio: "01/03/2018";
+        fim: "15/12/2022";
+        concluido: true;
+        nota: 8.5;
+    }
+}
+
+// Erro sintático: estrutura incorreta - falta chaves
+SECAO experiencia {
+    experiencia 
+        empresa: "TechCorp";
+        cargo: "Desenvolvedor Full Stack";
+        inicio: "01/03/2023";
+        atual: true;
+        descricao: "Desenvolvimento de aplicações web";
+        tecnologias: ["React", "Node.js"];
+}
+
+// Erro sintático: seção inválida
+SECAO invalida {
+    item {
+        nome: "Teste";
+        valor: "123";
+    }
+}
+
+// Erro sintático: campo inválido na seção de habilidades
+SECAO habilidades {
+    habilidade {
+        nome: "Java";
+        nivel: AVANCADO;
+        categoria: "Linguagens de Programação";
+        campo_invalido: "valor"; // Campo que não existe
+    }
+}
+
+// Erro sintático: lista malformada
+SECAO idiomas {
+    idioma {
+        nome: "Inglês";
+        nivel: AVANCADO;
+    }
+    idioma {
+        nome: "Espanhol";
+        nivel: INTERMEDIARIO;
+        tecnologias: [React, Node.js]; // Lista sem aspas
+    }
+} 
