@@ -5,7 +5,6 @@ import java.util.List;
 public class GeradorHTML {
     
     public String gerarHTML(CurriculoParser.ProgramaContext ctx) {
-        // Primeiro, vamos coletar os dados usando o analisador semântico
         CurriculoSemantico semantico = new CurriculoSemantico();
         semantico.visitPrograma(ctx);
         DadosCurriculo dados = semantico.getDadosCurriculo();
@@ -89,8 +88,9 @@ public class GeradorHTML {
         if (!dados.getExperiencias().isEmpty()) {
             html.append("        <div class=\"secao\">\n");
             html.append("            <h2>Experiência Profissional</h2>\n");
+            int expIndex = 1;
             for (Experiencia experiencia : dados.getExperiencias()) {
-                html.append("            <div class=\"item\">\n");
+                html.append("            <div class=\"item\" id=\"exp").append(expIndex).append("\">\n");
                 html.append("                <h3>").append(experiencia.getCargo()).append("</h3>\n");
                 html.append("                <p><strong>").append(experiencia.getEmpresa()).append("</strong></p>\n");
                 if (experiencia.getInicio() != null) {
@@ -111,6 +111,7 @@ public class GeradorHTML {
                     html.append("                </div>\n");
                 }
                 html.append("            </div>\n");
+                expIndex++;
             }
             html.append("        </div>\n");
         }
@@ -141,6 +142,37 @@ public class GeradorHTML {
                 html.append("                <p><span class=\"nivel\">").append(idioma.getNivel()).append("</span></p>\n");
                 html.append("            </div>\n");
             }
+            html.append("        </div>\n");
+        }
+        
+        // Seção de Tecnologias (referências cruzadas)
+        java.util.Map<String, java.util.List<Integer>> mapaTecnologias = new java.util.HashMap<>();
+        int expIndex = 1;
+        for (Experiencia experiencia : dados.getExperiencias()) {
+            if (experiencia.getTecnologias() != null) {
+                for (String tecnologia : experiencia.getTecnologias()) {
+                    mapaTecnologias.computeIfAbsent(tecnologia, k -> new java.util.ArrayList<>()).add(expIndex);
+                }
+            }
+            expIndex++;
+        }
+        if (!mapaTecnologias.isEmpty()) {
+            html.append("        <div class=\"secao\">\n");
+            html.append("            <h2>Tecnologias</h2>\n");
+            html.append("            <ul>\n");
+            for (String tecnologia : mapaTecnologias.keySet()) {
+                html.append("                <li>").append(tecnologia);
+                java.util.List<Integer> indices = mapaTecnologias.get(tecnologia);
+                for (int i = 0; i < indices.size(); i++) {
+                    int idx = indices.get(i);
+                    html.append(" <a href=\"#exp").append(idx).append("\">(").append(idx).append(")</a>");
+                    if (i < indices.size() - 1) {
+                        html.append(",");
+                    }
+                }
+                html.append("</li>\n");
+            }
+            html.append("            </ul>\n");
             html.append("        </div>\n");
         }
         

@@ -1,0 +1,48 @@
+CURRICULO TesteReferencias {
+    nome: "Maria Teste";
+    email: "maria@teste.com";
+    telefone: "(11) 99999-0000";
+    endereco: "Campinas, SP";
+    linkedin: "https://linkedin.com/in/mariateste";
+    github: "https://github.com/mariateste";
+}
+
+SECAO experiencia {
+    experiencia {
+        empresa: "Empresa A";
+        cargo: "Desenvolvedora Frontend";
+        inicio: "01/01/2020";
+        atual: false;
+        descricao: "Trabalhou com React e integração de APIs.";
+        tecnologias: ["React", "JavaScript"];
+    }
+    experiencia {
+        empresa: "Empresa B";
+        cargo: "Desenvolvedora Full Stack";
+        inicio: "01/02/2021";
+        atual: false;
+        descricao: "Desenvolvimento com Node.js e React.";
+        tecnologias: ["Node.js", "React"];
+    }
+    experiencia {
+        empresa: "Empresa C";
+        cargo: "Desenvolvedora Backend";
+        inicio: "01/03/2022";
+        atual: true;
+        descricao: "APIs REST com Node.js e testes automatizados.";
+        tecnologias: ["Node.js", "PostgreSQL"];
+    }
+}
+
+SECAO habilidades {
+    habilidade {
+        nome: "React";
+        nivel: AVANCADO;
+        categoria: "Frontend";
+    }
+    habilidade {
+        nome: "Node.js";
+        nivel: INTERMEDIARIO;
+        categoria: "Backend";
+    }
+} 

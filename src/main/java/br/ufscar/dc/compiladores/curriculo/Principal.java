@@ -11,7 +11,6 @@ import org.antlr.v4.runtime.Token;
 public class Principal {
     public static void main(String[] args) {
         try {
-            // Verifica se foi fornecido um arquivo de entrada
             if (args.length < 1) {
                 System.out.println("Uso: java -jar curriculo-compilador.jar <arquivo_entrada>");
                 return;

@@ -177,6 +177,29 @@ O compilador gera um arquivo PDF (`exemplo.pdf`) com o currículo formatado, inc
 - Experiência profissional
 - Habilidades técnicas
 - Idiomas
+- **Tecnologias** (com referências cruzadas para as experiências)
+
+## Referências Cruzadas de Tecnologias
+
+A partir da versão atual, o PDF gerado pelo compilador inclui uma seção especial chamada **Tecnologias** ao final do currículo. Nessa seção, todas as tecnologias utilizadas nas experiências profissionais são listadas, acompanhadas de referências (links) para as experiências onde cada tecnologia foi aplicada.
+
+- Cada tecnologia aparece com números entre parênteses, por exemplo: `React (1), (2)`.
+- Cada número é um link que leva diretamente à experiência correspondente no PDF.
+- As experiências são numeradas na ordem em que aparecem no currículo.
+
+### Exemplo de saída da seção Tecnologias
+
+```
+Tecnologias
+- React (1), (2)
+- Node.js (2), (3)
+- JavaScript (1)
+- PostgreSQL (3)
+```
+
+Ao clicar em `(1)`, `(2)`, etc., você será levado à experiência correspondente.
+
+---
 
 ## 🏗️ Estrutura do Projeto
 

@@ -4,14 +4,7 @@ Este diretório contém uma suíte completa de testes para validar o funcionamen
 
 ## 📋 Estrutura dos Testes
 
-### 1. **teste_valido_completo.curriculo** ✅
-**Objetivo**: Testar funcionamento correto com dados completos
-- ✅ Currículo com todas as seções preenchidas
-- ✅ Dados válidos em todos os campos
-- ✅ Múltiplas entradas em cada seção
-- **Resultado esperado**: PDF gerado sem erros
-
-### 2. **teste_casos_especiais.curriculo** ✅
+### 1. **teste_casos_especiais.curriculo** ✅
 **Objetivo**: Testar casos especiais e edge cases
 - ✅ Emails com subdomínios
 - ✅ Links com www
@@ -19,6 +12,13 @@ Este diretório contém uma suíte completa de testes para validar o funcionamen
 - ✅ Listas vazias
 - ✅ Strings com caracteres especiais
 - **Resultado esperado**: PDF gerado sem erros
+
+### 2. **teste_lexico_erros.curriculo** ❌
+**Objetivo**: Testar análise léxica
+- ❌ Símbolos não reconhecidos
+- ❌ Strings não fechadas
+- ❌ Números inválidos
+- **Resultado esperado**: Erros léxicos detectados
 
 ### 3. **teste_semantico_completo.curriculo** ❌
 **Objetivo**: Testar validações semânticas
@@ -38,21 +38,18 @@ Este diretório contém uma suíte completa de testes para validar o funcionamen
 - ❌ Lista malformada
 - **Resultado esperado**: Erros sintáticos detectados
 
-### 5. **teste_lexico_erros.curriculo** ❌
-**Objetivo**: Testar análise léxica
-- ❌ Símbolos não reconhecidos
-- ❌ Strings não fechadas
-- ❌ Números inválidos
-- **Resultado esperado**: Erros léxicos detectados
+### 5. **teste_tecnologias_referenciadas.curriculo** ✅
+**Objetivo**: Testar referências cruzadas de tecnologias
+- ✅ Múltiplas experiências com tecnologias compartilhadas
+- ✅ Seção de tecnologias com links para experiências
+- **Resultado esperado**: PDF gerado com seção de tecnologias e links funcionais
 
-### 6. **teste_erros.curriculo** ❌
-**Objetivo**: Teste original com erros básicos
-- ❌ Email inválido
-- ❌ LinkedIn inválido
-- ❌ GitHub inválido
-- ❌ Datas incorretas
-- ❌ Nível inválido
-- **Resultado esperado**: Erros semânticos detectados
+### 6. **teste_valido_completo.curriculo** ✅
+**Objetivo**: Testar funcionamento correto com dados completos
+- ✅ Currículo com todas as seções preenchidas
+- ✅ Dados válidos em todos os campos
+- ✅ Múltiplas entradas em cada seção
+- **Resultado esperado**: PDF gerado sem erros
 
 ## 🧪 Como Executar os Testes
 
