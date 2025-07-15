@@ -1,5 +1,9 @@
 # Compilador de Currículos - Linguagem Declarativa
 
+## Vídeo de apresentação do gerador de curriculo
+
+https://github.com/user-attachments/assets/f5ef8830-c09e-48ea-8614-4166da2c426d
+
 Este projeto implementa um compilador para uma linguagem declarativa de currículos, desenvolvido em Java usando ANTLR4. O compilador analisa arquivos de entrada em formato declarativo e gera currículos em PDF formatado.
 
 ## 🎯 Objetivo
