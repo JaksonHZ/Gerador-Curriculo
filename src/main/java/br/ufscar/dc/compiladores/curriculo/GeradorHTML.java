@@ -16,8 +16,8 @@ public class GeradorHTML {
         html.append("<!DOCTYPE html>\n");
         html.append("<html lang=\"pt-BR\">\n");
         html.append("<head>\n");
-        html.append("    <meta charset=\"UTF-8\">\n");
-        html.append("    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n");
+        html.append("    <meta charset=\"UTF-8\"/>\n");
+        html.append("    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"/>\n");
         html.append("    <title>").append(dados.getNome()).append(" - Currículo</title>\n");
         html.append("    <style>\n");
         html.append("        body { font-family: Arial, sans-serif; line-height: 1.6; margin: 0; padding: 20px; }\n");

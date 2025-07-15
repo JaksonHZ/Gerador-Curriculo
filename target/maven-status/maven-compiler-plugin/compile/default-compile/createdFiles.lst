@@ -36,5 +36,6 @@ br\ufscar\dc\compiladores\curriculo\CurriculoParser$CurriculoContext.class
 br\ufscar\dc\compiladores\curriculo\CurriculoParser$Campos_educacaoContext.class
 br\ufscar\dc\compiladores\curriculo\CurriculoParser$Secao_educacaoContext.class
 br\ufscar\dc\compiladores\curriculo\CurriculoParser$Campo_experienciaContext.class
+br\ufscar\dc\compiladores\curriculo\GeradorPDF.class
 br\ufscar\dc\compiladores\curriculo\CurriculoParser$Idioma_itemContext.class
 br\ufscar\dc\compiladores\curriculo\Educacao.class

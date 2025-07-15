@@ -18,7 +18,7 @@ public class Principal {
             }
 
             String arquivoEntrada = args[0];
-            String arquivoSaida = arquivoEntrada.replaceAll("\\.curriculo$", ".html");
+            String arquivoSaida = arquivoEntrada.replaceAll("\\.curriculo$", ".pdf");
             
             // Análise léxica
             CurriculoLexer lexer = new CurriculoLexer(CharStreams.fromFileName(arquivoEntrada));
@@ -37,13 +37,12 @@ public class Principal {
                 GeradorHTML gerador = new GeradorHTML();
                 String html = gerador.gerarHTML(arvore);
                 
-                // Escreve o arquivo HTML
-                try (PrintWriter writer = new PrintWriter(new FileWriter(arquivoSaida))) {
-                    writer.write(html);
-                }
+                // Geração do PDF a partir do HTML
+                GeradorPDF geradorPDF = new GeradorPDF();
+                geradorPDF.gerarPDF(html, arquivoSaida);
                 
                 System.out.println("Compilação realizada com sucesso!");
-                System.out.println("Arquivo HTML gerado: " + arquivoSaida);
+                System.out.println("Arquivo PDF gerado: " + arquivoSaida);
             } else {
                 System.out.println("Erros semânticos encontrados:");
                 for (String erro : semantico.getErros()) {

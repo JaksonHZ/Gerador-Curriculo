@@ -9,7 +9,7 @@ Este diretório contém uma suíte completa de testes para validar o funcionamen
 - ✅ Currículo com todas as seções preenchidas
 - ✅ Dados válidos em todos os campos
 - ✅ Múltiplas entradas em cada seção
-- **Resultado esperado**: HTML gerado sem erros
+- **Resultado esperado**: PDF gerado sem erros
 
 ### 2. **teste_casos_especiais.curriculo** ✅
 **Objetivo**: Testar casos especiais e edge cases
@@ -18,7 +18,7 @@ Este diretório contém uma suíte completa de testes para validar o funcionamen
 - ✅ Campos opcionais ausentes
 - ✅ Listas vazias
 - ✅ Strings com caracteres especiais
-- **Resultado esperado**: HTML gerado sem erros
+- **Resultado esperado**: PDF gerado sem erros
 
 ### 3. **teste_semantico_completo.curriculo** ❌
 **Objetivo**: Testar validações semânticas
@@ -101,12 +101,12 @@ java -jar target/curriculo-compilador-1.0-SNAPSHOT-jar-with-dependencies.jar tes
 
 ### **Cenário 1: Funcionamento Normal**
 - **Arquivo**: `teste_valido_completo.curriculo`
-- **Expectativa**: HTML gerado sem erros
-- **Validação**: Verificar se o HTML contém todos os dados
+- **Expectativa**: PDF gerado sem erros
+- **Validação**: Verificar se o PDF contém todos os dados
 
 ### **Cenário 2: Casos Especiais**
 - **Arquivo**: `teste_casos_especiais.curriculo`
-- **Expectativa**: HTML gerado sem erros
+- **Expectativa**: PDF gerado sem erros
 - **Validação**: Verificar tratamento de campos opcionais
 
 ### **Cenário 3: Erros Semânticos**
@@ -130,7 +130,7 @@ java -jar target/curriculo-compilador-1.0-SNAPSHOT-jar-with-dependencies.jar tes
 - ✅ Análise léxica: 100%
 - ✅ Análise sintática: 100%
 - ✅ Análise semântica: 100%
-- ✅ Geração de HTML: 100%
+- ✅ Geração de PDF: 100%
 
 ### **Cobertura de Casos de Uso**
 - ✅ Currículo completo: 100%
@@ -141,8 +141,8 @@ java -jar target/curriculo-compilador-1.0-SNAPSHOT-jar-with-dependencies.jar tes
 ## 🔍 Verificação de Resultados
 
 ### **Para Testes Válidos**
-1. Verificar se o arquivo HTML foi gerado
-2. Abrir o HTML no navegador
+1. Verificar se o arquivo PDF foi gerado
+2. Abrir o PDF em um leitor
 3. Confirmar que todos os dados estão presentes
 4. Verificar formatação e estilo
 
@@ -157,7 +157,7 @@ java -jar target/curriculo-compilador-1.0-SNAPSHOT-jar-with-dependencies.jar tes
 Os testes geram logs que incluem:
 - Status da compilação
 - Mensagens de erro (se houver)
-- Nome do arquivo HTML gerado
+- Nome do arquivo PDF gerado
 - Tempo de execução
 
 ## 🚀 Melhorias Futuras

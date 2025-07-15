@@ -1,13 +1,13 @@
 # Compilador de Currículos - Linguagem Declarativa
 
-Este projeto implementa um compilador para uma linguagem declarativa de currículos, desenvolvido em Java usando ANTLR4. O compilador analisa arquivos de entrada em formato declarativo e gera currículos em HTML formatado.
+Este projeto implementa um compilador para uma linguagem declarativa de currículos, desenvolvido em Java usando ANTLR4. O compilador analisa arquivos de entrada em formato declarativo e gera currículos em PDF formatado.
 
 ## 🎯 Objetivo
 
 O compilador foi desenvolvido para:
 - Fazer análise léxica e sintática usando ANTLR4
 - Realizar análise semântica com validações
-- Gerar HTML formatado como saída
+- Gerar PDF formatado como saída
 - Manter estrutura simples e funcional
 
 ## 📋 Linguagem de Entrada
@@ -170,8 +170,8 @@ SECAO idiomas {
 }
 ```
 
-### Saída HTML
-O compilador gera um arquivo HTML (`exemplo.html`) com o currículo formatado, incluindo:
+### Saída PDF
+O compilador gera um arquivo PDF (`exemplo.pdf`) com o currículo formatado, incluindo:
 - Informações pessoais
 - Seção de educação
 - Experiência profissional
@@ -208,7 +208,7 @@ curriculo-compilador/
 - **Java 8**: Linguagem de programação principal
 - **ANTLR4**: Geração de analisadores léxicos e sintáticos
 - **Maven**: Gerenciamento de dependências e build
-- **HTML/CSS**: Geração de saída formatada
+- **OpenHTMLtoPDF**: Conversão de HTML para PDF
 
 ## 📝 Casos de Teste
 
