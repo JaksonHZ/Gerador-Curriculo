@@ -1,5 +1,9 @@
 # Compilador de Currículos - Linguagem Declarativa
 
+Jakson Huang - 811773 <br>
+Gustavo Lamin - 811716 <br>
+Vitor Vechin - 812287 <br>
+
 ## Vídeo de apresentação do gerador de curriculo
 
 https://github.com/user-attachments/assets/f5ef8830-c09e-48ea-8614-4166da2c426d
